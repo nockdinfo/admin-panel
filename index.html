@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NockD Admin Login</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body{background:#000;color:#fff;font-family:'Poppins',sans-serif;display:flex;justify-content:center;align-items:center;height:100vh}
+    .login-box{background:#111;padding:35px;border-radius:12px;box-shadow:0 0 15px rgba(255,255,255,0.08);width:360px}
+    h2{ text-align:center;color:#007aff;margin-bottom:8px }
+    p{ text-align:center;font-size:13px;color:#aaa;margin-bottom:20px }
+    label{font-size:14px;font-weight:500;display:block;margin-bottom:4px}
+    input{width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#000;color:#fff;margin-bottom:12px}
+    .remember-forgot{display:flex;justify-content:space-between;align-items:center;margin:8px 0 18px}
+    .remember-box{display:flex;align-items:center;gap:6px;font-size:13px;color:#ccc}
+    .forgot{font-size:13px;color:#007aff;text-decoration:none}
+    button{width:100%;background:#007aff;border:none;padding:10px;border-radius:25px;font-weight:600;cursor:pointer;color:#fff}
+    button:hover{background:#005fca}
+    .error{color:#ff4d4d;text-align:center;font-size:13px;display:none;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>NockD Admin</h2>
+    <p>Sign in</p>
+
+    <label for="userid">User ID</label>
+    <input id="userid" type="text" placeholder="Enter user id">
+
+    <label for="password">Password</label>
+    <input id="password" type="password" placeholder="Enter password">
+
+    <div class="remember-forgot">
+      <div class="remember-box">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
+      <a href="#" id="forgot" class="forgot">Lost your password?</a>
+    </div>
+
+    <button id="loginBtn">Login</button>
+    <p id="error" class="error">Invalid user id or password</p>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
