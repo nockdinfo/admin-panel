@@ -1,26 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>NockD Dashboard</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    body{background:#000;color:#fff;font-family:'Poppins',sans-serif;margin:0}
-    .topbar{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;border-bottom:1px solid #222}
-    .btn{padding:8px 14px;border-radius:20px;cursor:pointer;font-weight:600}
-    .btn-primary{background:#007aff;color:#fff;border:0}
-    .btn-outline{background:transparent;border:1px solid #007aff;color:#007aff}
-    .wrap{max-width:1100px;margin:24px auto;padding:20px}
-    .card{background:#111;padding:16px;border-radius:10px;margin-bottom:16px}
-    input,textarea,select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #333;background:#000;color:#fff}
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{padding:8px;text-align:left;border-bottom:1px solid #222;font-size:14px}
-    .small{font-size:13px;color:#aaa}
-  </style>
+  <link rel="stylesheet" href="deshboard.css">
 </head>
 <body>
 
-  <script> // protect route: only admin role allowed
+  <script>
     if(localStorage.getItem('nockd_role')!=='admin') location='admin-login.html';
   </script>
 
@@ -33,7 +21,6 @@
   </div>
 
   <div class="wrap">
-    <!-- Manage Users -->
     <div class="card">
       <h3>Manage Users</h3>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
@@ -48,24 +35,25 @@
       <div id="usersList" style="margin-top:12px"></div>
     </div>
 
-    <!-- Products (same as earlier) -->
     <div class="card">
       <h3>Add / Edit Product</h3>
+      <input id="p-category" placeholder="Product Category">
       <input id="p-name" placeholder="Product Name">
       <input id="p-price" placeholder="Price ₹" type="number">
       <textarea id="p-desc" placeholder="Description"></textarea>
       <select id="p-cat">
-        <option value="nockd">NockD (Men)</option>
-        <option value="velra">Velra (Women)</option>
+        <option value="nockd">NockD</option>
+        <option value="velra">Velra</option>
       </select>
       <input id="p-img" type="file" accept="image/*">
+      <input id="p-link" placeholder="Product Link (URL)">
       <button id="saveProd" class="btn btn-primary">Add Product</button>
 
       <h4 style="margin-top:20px">Existing Products</h4>
       <div id="prodList"></div>
     </div>
   </div>
-
+  
   <script src="admin.js"></script>
 </body>
 </html>

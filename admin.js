@@ -55,14 +55,11 @@ if(document.getElementById('loginBtn')){
     if(remember.checked) localStorage.setItem('nockd_remember_id', user.id);
     else localStorage.removeItem('nockd_remember_id');
 
-    if(user.role === 'admin') {
-      // go to admin dashboard
-      location = 'dashboard.html';
-    } else {
-      // normal user -> go to site (index)
-      alert('Login successful. Redirecting to site.');
-      location = '../index.html';
-    }
+    if (user.active) {
+  localStorage.setItem('nockd_user', JSON.stringify(user));
+  alert("Login successful. Redirecting to site.");
+  window.location.href = "dashboard.html"; // <-- sirf ye likho
+}
   };
 
   // forgot password - allow reset only if user exists (this is client-side)
@@ -86,7 +83,7 @@ if(document.getElementById('loginBtn')){
 // ---------------- DASHBOARD PAGE LOGIC ----------------
 if(document.getElementById('addUser') || document.getElementById('saveProd')){
   // protect route: only admin
-  if(localStorage.getItem('nockd_role') !== 'admin'){ location = 'admin-login.html'; }
+  if(localStorage.getItem('nockd_role') !== 'admin'){ location = 'index.html'; }
 
   document.getElementById('signedUser').innerText = localStorage.getItem('nockd_user') || '';
 
@@ -225,7 +222,7 @@ if(document.getElementById('addUser') || document.getElementById('saveProd')){
   document.getElementById('logout').onclick = ()=>{
     localStorage.removeItem('nockd_user');
     localStorage.removeItem('nockd_role');
-    location = 'admin-login.html';
+    location = 'index.html';
   };
   document.getElementById('viewSite').onclick = ()=> location = '../index.html';
 }

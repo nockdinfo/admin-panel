@@ -1,0 +1,91 @@
+body {
+  background: #171616;
+  color: #433838;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: #111;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.08);
+  width: 360px;
+}
+
+h2 {
+  text-align: center;
+  color: #007aff;
+  margin-bottom: 8px;
+}
+
+p {
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #000;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0 18px;
+}
+
+.remember-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.forgot {
+  font-size: 13px;
+  color: #007aff;
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  background: #007aff;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+}
+
+button:hover {
+  background: #005fca;
+}
+
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  font-size: 13px;
+  display: none;
+  margin-top: 8px;
+}
